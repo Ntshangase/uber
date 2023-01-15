@@ -1,13 +1,16 @@
 import { StyleSheet, Text, View } from 'react-native';
 import { Provider } from 'react-redux';
+import { store } from './store';
 
 //set-up redux
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Uber under construction</Text>
-    </View>
+    <Provider store={store}>
+      <View style={styles.container}>
+        <Text>Uber under construction</Text>
+      </View>
+    </Provider>
   );
 }
 
