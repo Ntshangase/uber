@@ -15,7 +15,7 @@ const HomeScreen = () => {
             <View style={tw`p-5`}>
                 <Image
                     style={{
-                        width: 100, height: 200, resizeMode: 'contain'
+                        width: 100, height: 100, resizeMode: 'contain',
                     }}
                     source={{
                         uri: 'https://links.papareact.com/gzs',
@@ -29,7 +29,7 @@ const HomeScreen = () => {
                             flex: 0,
                         },
                         textInput: {
-                            fontSize: 10,
+                            fontSize: 18,
                         },
                     }}
                     onPress={(data, details = null) => {
