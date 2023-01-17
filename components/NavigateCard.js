@@ -28,7 +28,7 @@ const NavigateCard = () => {
                                     description: data.description,
                                 })
                             );
-                            navigation.navigate('RideOptionsCard');
+                            navigation.navigate('RideOptions');
                         }}
                         enablePoweredByContainer={false}
                         nearbyPlacesAPI='GooglePlacesSearch'
