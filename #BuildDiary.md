@@ -10,3 +10,5 @@
 -after learning to read these errors that's when i cam back here toput my knowledge to the test and i was able with on go to pin point where the error was and resolve it.
 -fun times i tell you.
 -i like how there is no auto-correct here by default my spelling is right.
+
+-chatGPT just saved me. I deduce that chatGPT is more usefull when the outcome is already know, but i also knew the outcome yesterday i wanted it to find bugs, my question was where does the code break and chatG couldn't answer that.
