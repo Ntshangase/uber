@@ -7,42 +7,42 @@ import MapViewDirections from 'react-native-maps-directions';
 import { GOOGLE_MAPS_APIKEY } from '@env';
 
 const Map = () => {
-    const origin = useSelector(selectOrigin);
-    const destination = useSelector(selectDestination);
+  const origin = useSelector(selectOrigin);
+  const destination = useSelector(selectDestination);
 
   return (
     <MapView
-    style={tw`flex-1`}
-    mapType='mutedStandard'
-    initialRegion={{
-      latitude: origin.location.lat,
-      longitude: origin.location.lng,
-      latitudeDelta: 0.005,
-      longitudeDelta: 0.005,
-    }}
-   > 
-    { origin && destination && (
-      <MapViewDirections
-        origin={origin.describtion}
-        destination={destination.describtion}
-        apikey={GOOGLE_MAPS_APIKEY}
-        strokeWidth={3}
-        strokeColor="black"
-       />
-    )}
+      style={tw`flex-1`}
+      mapType='mutedStandard'
+      initialRegion={{
+        latitude: origin.location.lat,
+        longitude: origin.location.lng,
+        latitudeDelta: 0.005,
+        longitudeDelta: 0.005,
+      }}
+    >
+      {origin && destination && (
+        <MapViewDirections
+          origin={origin.describtion}
+          destination={destination.describtion}
+          apikey={GOOGLE_MAPS_APIKEY}
+          strokeWidth={3}
+          strokeColor="black"
+        />
+      )}
 
-    {origin?.location && 
-        <Marker 
-            coordinate={ {
-                latitude: origin.location.lat,
-                longitude: origin.location.lng,
-            }} 
-            title='Origin'
-            description={origin.description}
-            identifier='origin'
-         />
-     }
-   </MapView>
+      {origin?.location &&
+        <Marker
+          coordinate={{
+            latitude: origin.location.lat,
+            longitude: origin.location.lng,
+          }}
+          title='Origin'
+          description={origin.description}
+          identifier='origin'
+        />
+      }
+    </MapView>
   )
 }
 

@@ -1,4 +1,4 @@
-import { Image, SafeAreaView, StyleSheet, View } from 'react-native'
+import { Image, SafeAreaView, View } from 'react-native'
 import React from 'react';
 import tw from 'twrnc';
 import NavOptions from '../components/NavOptions';
@@ -59,9 +59,3 @@ const HomeScreen = () => {
 }
 
 export default HomeScreen
-
-const styles = StyleSheet.create({
-    text: {
-        color: 'blue',
-    }
-})
