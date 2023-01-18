@@ -23,11 +23,11 @@ const Map = () => {
     >
       {origin && destination && (
         <MapViewDirections
-          origin={origin.describtion}
-          destination={destination.describtion}
+          origin={origin.description}
+          destination={destination.description}
           apikey={GOOGLE_MAPS_APIKEY}
           strokeWidth={3}
-          strokeColor="black"
+          strokeColor="hotpink"
         />
       )}
 

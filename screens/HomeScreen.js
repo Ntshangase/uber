@@ -55,7 +55,7 @@ const HomeScreen = () => {
                 <NavOptions />
             </View>
         </SafeAreaView>
-    )
+    );
 }
 
 export default HomeScreen
