@@ -1,5 +1,5 @@
 import { FlatList, SafeAreaView, Text, TouchableOpacity, View, Image } from 'react-native'
-import React from 'react';
+import React, { useState } from 'react';
 import tw from 'twrnc';
 import { Icon } from '@rneui/base';
 import { useNavigation } from '@react-navigation/native';
@@ -27,6 +27,7 @@ const data = [
 
 const RideOptionsCard = () => {
   const navigation = useNavigation();
+  const [selected, setSelected] = useState(null);
 
   return (
     <SafeAreaView style={tw`bg-white flex-grow`}>
@@ -39,27 +40,38 @@ const RideOptionsCard = () => {
         <Text style={tw`text-center py-5 text-xl`}>Select a Ride</Text>
       </View>
 
-      <FlatList 
+      <FlatList
         data={data}
-        keyExtractor={ (item) => item.id}
-        renderItem={ ({item:{id, title, multiplier, image}}) => (
-          <TouchableOpacity style={tw`flex-row justify-between items-center px-10`}>
-            <Image 
-              style={ {
+        keyExtractor={(item) => item.id}
+        renderItem={({ item: { id, title, multiplier, image }, item }) => (
+          <TouchableOpacity
+            onPress={() => setSelected(item)}
+            style={tw`flex-row justify-between items-center px-10 
+          ${id === selected?.id ? 'bg-gray-200' : ''}`}>
+            <Image
+              style={{
                 width: 100,
                 height: 100,
                 resizeMode: 'contain',
-              }} 
-              source={ {uri: image}}
+              }}
+              source={{ uri: image }}
             />
-            <View>
-              <Text>{title}</Text>
+            <View style={tw`-ml-6`}>
+              <Text style={tw`text-xl font-semibold`}>{title}</Text>
               <Text>Travel time...</Text>
             </View>
-            <Text>R99</Text>
+            <Text style={tw`text-xl`}>R99</Text>
           </TouchableOpacity>
         )}
       />
+      {/**check below not showing */}
+      <View>
+        <TouchableOpacity style={tw`bg-black py-3 m-3`}>
+          <Text style={tw`text-center text-white text-xl`}>
+            Choose {selected?.title}
+          </Text>
+        </TouchableOpacity>
+      </View>
     </SafeAreaView>
   )
 }
