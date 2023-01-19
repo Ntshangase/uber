@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import MapView, { Marker } from 'react-native-maps';
 import tw from 'twrnc';
 import { useSelector } from 'react-redux';
@@ -9,9 +9,24 @@ import { GOOGLE_MAPS_APIKEY } from '@env';
 const Map = () => {
   const origin = useSelector(selectOrigin);
   const destination = useSelector(selectDestination);
+  const mapRef = useRef(null);
+
+  useEffect(() => {
+    if (!origin || !destination ) return;
+  
+    const zoomTimer = setInterval(() => {
+        mapRef.current.fitToSuppliedMarkers(
+          ["origin", "destination"], {
+          edgePadding: { top: 50, right: 50, bottom: 50, left: 50 },
+      });
+          clearInterval(zoomTimer);
+      }, 512);   
+    
+  }, [origin, destination]);
 
   return (
     <MapView
+      ref={mapRef}
       style={tw`flex-1`}
       mapType='mutedStandard'
       initialRegion={{
@@ -27,7 +42,7 @@ const Map = () => {
           destination={destination.description}
           apikey={GOOGLE_MAPS_APIKEY}
           strokeWidth={3}
-          strokeColor="hotpink"
+          strokeColor="black"
         />
       )}
 
@@ -42,6 +57,19 @@ const Map = () => {
           identifier='origin'
         />
       }
+
+      {destination?.location &&
+        <Marker
+          coordinate={{
+            latitude: destination.location.lat,
+            longitude: destination.location.lng,
+          }}
+          title='destination'
+          description={destination.description}
+          identifier='destination'
+        />
+      }
+
     </MapView>
   )
 }
