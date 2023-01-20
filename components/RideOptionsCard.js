@@ -5,6 +5,8 @@ import { Icon } from '@rneui/base';
 import { useNavigation } from '@react-navigation/native';
 import { useSelector } from 'react-redux';
 import { selectTravelTimeInformation } from '../slices/navSlice';
+import 'intl';
+import 'intl/locale-data/jsonp/en'; // or any other locale you need
 
 const data = [
   {
@@ -26,6 +28,9 @@ const data = [
     image: 'https://links.papareact.com/7pf',
   },
 ];
+
+//for Peak-hour pricing
+const SURGE_CHARGE_RATE = 1.5;
 
 const RideOptionsCard = () => {
   const navigation = useNavigation();
@@ -62,10 +67,17 @@ const RideOptionsCard = () => {
             
             <View style={tw`mr-6`}>
               <Text style={tw`text-xl font-semibold`}>{title}</Text>
-              <Text>{travelTimeInformation?.duration.text}Travel time</Text>
+              <Text>{travelTimeInformation?.duration.text}</Text>
             </View>
 
-            <Text style={tw`text-xl`}>R99</Text>
+            <Text style={tw`text-xl`}>
+              {new Intl.NumberFormat( 'en-za', {
+                style: 'currency',
+                currency: 'ZAR',
+              }).format(
+                (travelTimeInformation?.duration.value * SURGE_CHARGE_RATE * multiplier) / 100
+              )}
+            </Text>
             
           </TouchableOpacity>
         )}
