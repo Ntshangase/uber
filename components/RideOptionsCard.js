@@ -82,11 +82,11 @@ const RideOptionsCard = () => {
           </TouchableOpacity>
         )}
       />
-      {/**Not showing on screen, missing functionality (unselected)  py-3 m-3*/}
-      <View>
+      {/**Not showing on screen, missing functionality (unselected)  */}
+      <View style={tw`mt-auto border-t border-gray-200`}>
         <TouchableOpacity 
           disabled={!selected}
-          style={tw`bg-black ${selected? '': 'bg-gray-300'} `}>
+          style={tw`bg-black py-3 m-3 ${selected? '': 'bg-gray-300'} `}>
           <Text style={tw`text-center text-white text-xl`}>
             Choose {selected?.title}
           </Text>
