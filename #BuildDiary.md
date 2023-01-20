@@ -12,3 +12,6 @@
 -i like how there is no auto-correct here by default my spelling is right.
 
 -chatGPT just saved me. I deduce that chatGPT is more usefull when the outcome is already know, but i also knew the outcome yesterday i wanted it to find bugs, my question was where does the code break and chatG couldn't answer that.
+
+# hurdles
+-due to the phone model i'm using (faike) the screen is not displaying full screen and therefore i have been unable to test slide back functionality, now i can't see the Choose buttonat the bottom. 
