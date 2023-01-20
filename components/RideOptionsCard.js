@@ -64,7 +64,7 @@ const RideOptionsCard = () => {
           </TouchableOpacity>
         )}
       />
-      {/**check below not showing */}
+
       <View>
         <TouchableOpacity style={tw`bg-black py-3 m-3`}>
           <Text style={tw`text-center text-white text-xl`}>
