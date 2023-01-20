@@ -49,7 +49,7 @@ const RideOptionsCard = () => {
         renderItem={({ item: { id, title, multiplier, image }, item }) => (
           <TouchableOpacity
             onPress={() => setSelected(item)}
-            style={tw`flex-row justify-between items-center px-10 
+            style={tw`flex-row justify-evenly items-center px-10 
           ${id === selected?.id ? 'bg-gray-200' : ''}`}>
             <Image
               style={{
@@ -59,11 +59,14 @@ const RideOptionsCard = () => {
               }}
               source={{ uri: image }}
             />
-            <View style={tw`-ml-6`}>
+            
+            <View style={tw`mr-6`}>
               <Text style={tw`text-xl font-semibold`}>{title}</Text>
               <Text>{travelTimeInformation?.duration.text}Travel time</Text>
             </View>
+
             <Text style={tw`text-xl`}>R99</Text>
+            
           </TouchableOpacity>
         )}
       />
