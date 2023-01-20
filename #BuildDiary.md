@@ -16,3 +16,4 @@
 # hurdles
 -due to the phone model i'm using (faike) the screen is not displaying full screen and therefore i have been unable to test slide back functionality, now i can't see the Choose buttonat the bottom. 
 -safeareaview is for ios// safeareaprovider forandriod.  bottom-100/100
+-travelTime errors need optional chaining(?)
