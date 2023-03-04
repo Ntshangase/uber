@@ -139,3 +139,10 @@ There are a few steps you may want to take to troubleshoot these kinds of errors
 If you're not able to scan the QR code, make sure your phone's camera is focusing correctly, and also make sure that the contrast on the two colors in your terminal is high enough. For example, WebStorm's default themes may [not have enough contrast](https://github.com/react-community/create-react-native-app/issues/49) for terminal QR codes to be scannable with the system barcode scanners that the Expo app uses.
 
 If this causes problems for you, you may want to try changing your terminal's color theme to have more contrast, or running Create React Native App from a different terminal. You can also manually enter the URL printed by the packager script in the Expo app's search bar to load it manually.
+
+# What to expect
+![Screenshot_20230304-193632](https://user-images.githubusercontent.com/62051440/222921263-7866fb26-a2e1-41d7-bb76-f0a7a2dcbc21.png)
+![Screenshot_20230304-193651](https://user-images.githubusercontent.com/62051440/222921265-b2613a60-9200-4522-8cb5-7c7411ba3a8d.png)
+![Screenshot_20230304-193738](https://user-images.githubusercontent.com/62051440/222921316-e2f8184b-70ff-49e2-b12a-5d83ec155be0.png)
+
+
