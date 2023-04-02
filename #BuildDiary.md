@@ -16,6 +16,8 @@
 - chatGPT just saved me. I deduce that chatGPT is more usefull when the outcome is already know, but i also knew the outcome yesterday i wanted it to find bugs, my       question was where does the code break and chatGPT couldn't answer that.
 
 # hurdles
-- due to the phone model i'm using (faike-phone) the screen is not displaying full screen and therefore i have been unable to test slide back functionality, now i can't see the Choose button at the bottom. 
+- due to the phone model i'm using the screen is not displaying full screen and therefore i have been unable to test slide back functionality,I also can't see the Choose button at the bottom. 
+
+### remember these
 - safeareaview is for ios // safeareaprovider for andriod.  bottom-100/100
 - travelTime errors need optional chaining(?)
